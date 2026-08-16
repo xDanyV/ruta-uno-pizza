@@ -2,6 +2,7 @@ import Navbar from '@/components/layout/Navbar';
 import Hero from '@/components/sections/Hero';
 import MenuSection from '@/components/sections/MenuSection';
 import CafeSection from '@/components/sections/CafeSection';
+import LocationSection from '@/components/sections/LocationSection';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <MenuSection />
       <CafeSection />
+      <LocationSection />
     </main>
   );
 }
