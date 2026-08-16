@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import MenuSection from '@/components/sections/MenuSection';
 import CafeSection from '@/components/sections/CafeSection';
 import LocationSection from '@/components/sections/LocationSection';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <MenuSection />
       <CafeSection />
       <LocationSection />
+      <Footer />
     </main>
   );
 }
