@@ -16,7 +16,7 @@ export default function ProductCard({ item, onSelect }: ProductCardProps) {
             layout
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
             onClick={() => onSelect(item)}
-            className="group cursor-pointer bg-stone-900/90 rounded-2xl md:rounded-3xl overflow-hidden border border-stone-800/80 hover:border-[#881938] transition-all duration-300 flex flex-row md:flex-col justify-between shadow-lg shadow-black/50 hover:shadow-2xl hover:shadow-[#6d122c]/20 select-none"
+            className="group cursor-pointer bg-stone-900/90 rounded-2xl md:rounded-3xl overflow-hidden border border-stone-800/80 hover:border-(--brand-border) transition-all duration-300 flex flex-row md:flex-col justify-between shadow-lg shadow-black/50 hover:shadow-2xl hover:shadow-(--brand-base)/25 select-none"
         >
             {/* Contenedor de Imagen */}
             <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-full md:h-52 shrink-0 overflow-hidden bg-stone-950">
@@ -30,7 +30,7 @@ export default function ProductCard({ item, onSelect }: ProductCardProps) {
 
                 {/* Tag Guinda Elegante */}
                 {item.tag && (
-                    <div className="hidden md:flex absolute top-3 left-3 bg-[#6d122c]/95 border border-[#881938] text-rose-100 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full items-center gap-1 shadow-md">
+                    <div className="hidden md:flex absolute top-3 left-3 bg-(--brand-base)/95 border border-(--brand-border) text-rose-100 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full items-center gap-1 shadow-md">
                         <Flame className="w-3 h-3 text-rose-200" />
                         <span>{item.tag}</span>
                     </div>
@@ -41,7 +41,7 @@ export default function ProductCard({ item, onSelect }: ProductCardProps) {
             <div className="p-3.5 sm:p-4 md:p-5 flex flex-col justify-between flex-1 min-w-0">
                 <div>
                     {item.tag && (
-                        <span className="md:hidden inline-block text-[10px] text-[#b82d4f] font-bold uppercase tracking-wider mb-1">
+                        <span className="md:hidden inline-block text-[10px] text-(--brand-accent) font-bold uppercase tracking-wider mb-1">
                             • {item.tag}
                         </span>
                     )}
@@ -60,7 +60,7 @@ export default function ProductCard({ item, onSelect }: ProductCardProps) {
                     </span>
 
                     <span className="text-[11px] text-stone-400 group-hover:text-rose-200 font-medium flex items-center gap-1 transition-colors">
-                        <Sparkles className="w-3 h-3 text-[#b82d4f] opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <Sparkles className="w-3 h-3 text-(--brand-accent) opacity-0 group-hover:opacity-100 transition-opacity" />
                         <span>Ver detalles</span>
                     </span>
                 </div>

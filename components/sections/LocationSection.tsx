@@ -9,20 +9,18 @@ const schedule = [
 ];
 
 export default function LocationSection() {
-    const mapsDirectUrl = "https://maps.app.goo.gl/9P8yqN3aM5sK6w9M8";
-
     return (
         <section id="location" className="py-16 md:py-24 bg-stone-950 relative overflow-hidden">
 
             {/* Resplandor ambiental */}
-            <div className="absolute top-1/2 right-10 w-96 h-96 bg-[#6d122c]/15 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute top-1/2 right-10 w-96 h-96 bg-(--brand-base)/15 rounded-full blur-[150px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Cabecera */}
                 <div className="flex flex-col items-center text-center mb-12 space-y-3">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#6d122c]/20 border border-[#881938]/50 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
-                        <MapPin className="w-3.5 h-3.5 text-rose-300" />
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-(--brand-base)/20 border border-(--brand-border)/50 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
+                        <MapPin className="w-3.5 h-3.5 text-(--brand-accent)" />
                         <span>Visítanos en Tijuana</span>
                     </div>
 
@@ -43,12 +41,12 @@ export default function LocationSection() {
                         {/* Tarjeta de Dirección */}
                         <div className="bg-stone-900/80 border border-stone-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm space-y-4 shadow-xl">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-[#6d122c]/30 border border-[#881938]/60 flex items-center justify-center text-rose-200">
+                                <div className="w-10 h-10 rounded-2xl bg-(--brand-base)/30 border border-(--brand-border)/60 flex items-center justify-center text-rose-200">
                                     <Navigation className="w-5 h-5" />
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold text-stone-100">Ubicación</h3>
-                                    <p className="text-xs text-[#b82d4f] font-semibold uppercase tracking-wider">Jardines de Agua Caliente</p>
+                                    <p className="text-xs text-(--brand-accent) font-semibold uppercase tracking-wider">Jardines de Agua Caliente</p>
                                 </div>
                             </div>
 
@@ -70,7 +68,7 @@ export default function LocationSection() {
                         {/* Tarjeta de Horarios */}
                         <div className="bg-stone-900/80 border border-stone-800/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm space-y-4 shadow-xl flex-1 flex flex-col justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-2xl bg-[#6d122c]/30 border border-[#881938]/60 flex items-center justify-center text-rose-200">
+                                <div className="w-10 h-10 rounded-2xl bg-(--brand-base)/30 border border-(--brand-border)/60 flex items-center justify-center text-rose-200">
                                     <Clock className="w-5 h-5" />
                                 </div>
                                 <div>
@@ -93,7 +91,7 @@ export default function LocationSection() {
 
                             <div className="pt-2">
                                 <div className="flex items-center gap-2 text-xs text-stone-400 bg-stone-950/60 px-4 py-2.5 rounded-2xl border border-stone-800">
-                                    <Sparkles className="w-4 h-4 text-[#b82d4f] shrink-0" />
+                                    <Sparkles className="w-4 h-4 text-(--brand-accent) shrink-0" />
                                     <span>Masa fresca horneada diariamente en cada turno.</span>
                                 </div>
                             </div>

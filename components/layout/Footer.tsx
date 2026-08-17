@@ -6,8 +6,7 @@ import {
     PhoneCall,
     MapPin,
     Clock,
-    ArrowUp,
-    ShoppingBag
+    ArrowUp
 } from 'lucide-react';
 
 const footerLinks = [
@@ -51,14 +50,6 @@ function FacebookIcon({ className = "w-5 h-5" }: { className?: string }) {
     );
 }
 
-function UberEatsIcon({ className = "w-4 h-4" }: { className?: string }) {
-    return (
-        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-2-8a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-        </svg>
-    );
-}
-
 export default function Footer() {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -68,14 +59,14 @@ export default function Footer() {
         <footer className="bg-stone-950 border-t border-stone-900 relative overflow-hidden pb-20 md:pb-8 pt-16">
 
             {/* Resplandor ambiental inferior */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-125 h-48 bg-[#6d122c]/10 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-125 h-48 bg-(--brand-base)/10 rounded-full blur-[140px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-stone-900">
 
                     {/* Columna 1: Logotipo Circular */}
                     <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-                        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 bg-linear-to-b from-[#6d122c]/40 to-stone-900 border border-[#881938]/40 shadow-2xl shadow-[#6d122c]/20">
+                        <div className="relative w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 bg-linear-to-b from-(--brand-base)/40 to-stone-900 border border-(--brand-border)/40 shadow-2xl shadow-(--brand-base)/20">
                             <Image
                                 src="/images/logo.jpg"
                                 alt="Ruta Uno Café y Pizza Tijuana"
@@ -128,9 +119,10 @@ export default function Footer() {
 
                         {/* Casilla de Llamada Directa */}
                         <a
-                            className="w-full sm:w-auto inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-stone-900/90 border border-stone-800 hover:border-[#881938] text-stone-200 hover:text-white transition-all shadow-lg hover:shadow-[#6d122c]/20 group active:scale-95"
+                            href="tel:+526649778473"
+                            className="w-full sm:w-auto inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-stone-900/90 border border-stone-800 hover:border-(--brand-border) text-stone-200 hover:text-white transition-all shadow-lg hover:shadow-(--brand-base)/20 group active:scale-95 cursor-pointer"
                         >
-                            <div className="w-9 h-9 rounded-xl bg-[#6d122c]/30 border border-[#881938]/60 flex items-center justify-center text-rose-200 group-hover:bg-[#6d122c]/50 transition-colors">
+                            <div className="w-9 h-9 rounded-xl bg-(--brand-base)/30 border border-(--brand-border)/60 flex items-center justify-center text-rose-200 group-hover:bg-(--brand-base)/50 transition-colors">
                                 <PhoneCall className="w-4 h-4" />
                             </div>
                             <div className="text-left">
@@ -196,11 +188,11 @@ export default function Footer() {
 
                         <div className="space-y-1 pt-1 text-xs text-stone-400 text-center md:text-left">
                             <div className="flex items-center justify-center md:justify-start gap-1.5">
-                                <MapPin className="w-3.5 h-3.5 text-rose-300 shrink-0" />
+                                <MapPin className="w-3.5 h-3.5 text-(--brand-accent) shrink-0" />
                                 <span>Jardines de Agua Caliente, Tijuana</span>
                             </div>
                             <div className="flex items-center justify-center md:justify-start gap-1.5">
-                                <Clock className="w-3.5 h-3.5 text-rose-300 shrink-0" />
+                                <Clock className="w-3.5 h-3.5 text-(--brand-accent) shrink-0" />
                                 <span>Abierto todos los días desde la 1:00 PM</span>
                             </div>
                         </div>
