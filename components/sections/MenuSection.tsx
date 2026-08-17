@@ -48,14 +48,14 @@ export default function MenuSection() {
         <section id="menu" className="py-16 md:py-20 bg-stone-950 relative overflow-hidden pb-28 md:pb-20">
 
             {/* Resplandor ambiental */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-[#6d122c]/10 rounded-full blur-[160px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-(--brand-base)/15 rounded-full blur-[160px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Cabecera */}
                 <div className="flex flex-col items-center text-center mb-8 sm:mb-10 space-y-3">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#6d122c]/20 border border-[#881938]/50 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
-                        <Utensils className="w-3.5 h-3.5 text-rose-300" />
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-(--brand-base)/20 border border-(--brand-border)/60 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
+                        <Utensils className="w-3.5 h-3.5 text-(--brand-accent)" />
                         <span>Nuestras Creaciones</span>
                     </div>
 
@@ -79,7 +79,7 @@ export default function MenuSection() {
                         {activeCategory === 'all' && (
                             <motion.div
                                 layoutId="activeFilterPill"
-                                className="absolute inset-0 bg-linear-to-r from-[#540e21] to-[#6d122c] rounded-full border border-[#881938] shadow-md shadow-[#6d122c]/30"
+                                className="absolute inset-0 bg-linear-to-r from-(--brand-dark) to-(--brand-base) rounded-full border border-(--brand-border) shadow-md shadow-(--brand-base)/35"
                                 transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
                             />
                         )}
@@ -100,7 +100,7 @@ export default function MenuSection() {
                                 {isActive && (
                                     <motion.div
                                         layoutId="activeFilterPill"
-                                        className="absolute inset-0 bg-linear-to-r from-[#540e21] to-[#6d122c] rounded-full border border-[#881938] shadow-md shadow-[#6d122c]/30"
+                                        className="absolute inset-0 bg-linear-to-r from-(--brand-dark) to-(--brand-base) rounded-full border border-(--brand-border) shadow-md shadow-(--brand-base)/35"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
                                     />
                                 )}
@@ -134,8 +134,8 @@ export default function MenuSection() {
                 {totalPages > 1 && (
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 sm:mt-10 pt-4 sm:pt-6 border-t border-stone-800/80">
                         <span className="text-xs text-stone-400 font-medium">
-                            Mostrando <strong className="text-rose-500">{startIndex + 1}</strong> –{' '}
-                            <strong className="text-rose-500">
+                            Mostrando <strong className="text-(--brand-accent)">{startIndex + 1}</strong> –{' '}
+                            <strong className="text-(--brand-accent)">
                                 {Math.min(startIndex + ITEMS_PER_PAGE, filteredItems.length)}
                             </strong>{' '}
                             de <strong className="text-stone-200">{filteredItems.length}</strong> platillos
@@ -145,7 +145,7 @@ export default function MenuSection() {
                             <button
                                 onClick={handlePrevPage}
                                 disabled={currentPage === 1}
-                                className="p-2 sm:p-2.5 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:border-[#6d122c] disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95"
+                                className="p-2 sm:p-2.5 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:border-(--brand-border) disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95"
                                 aria-label="Página anterior"
                             >
                                 <ChevronLeft className="w-5 h-5" />
@@ -157,7 +157,7 @@ export default function MenuSection() {
                                         key={i}
                                         onClick={() => setCurrentPage(i + 1)}
                                         className={`h-2 rounded-full transition-all duration-300 ${currentPage === i + 1
-                                                ? 'w-6 bg-linear-to-r from-[#6d122c] to-[#881938]'
+                                                ? 'w-6 bg-linear-to-r from-(--brand-base) to-(--brand-accent) shadow-sm shadow-(--brand-accent)/50'
                                                 : 'w-2 bg-stone-700 hover:bg-stone-500'
                                             }`}
                                         aria-label={`Ir a página ${i + 1}`}
@@ -168,7 +168,7 @@ export default function MenuSection() {
                             <button
                                 onClick={handleNextPage}
                                 disabled={currentPage === totalPages}
-                                className="p-2 sm:p-2.5 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:border-[#6d122c] disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95"
+                                className="p-2 sm:p-2.5 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:border-(--brand-border) disabled:opacity-30 disabled:pointer-events-none transition-all active:scale-95"
                                 aria-label="Página siguiente"
                             >
                                 <ChevronRight className="w-5 h-5" />
@@ -188,7 +188,7 @@ export default function MenuSection() {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                             transition={{ duration: 0.2 }}
-                            className="relative w-full max-w-lg bg-stone-900 border border-[#881938]/60 rounded-3xl overflow-hidden shadow-2xl shadow-black"
+                            className="relative w-full max-w-lg bg-stone-900 border border-(--brand-border)/70 rounded-3xl overflow-hidden shadow-2xl shadow-black"
                         >
                             <button
                                 onClick={() => setSelectedProduct(null)}
@@ -209,7 +209,7 @@ export default function MenuSection() {
                                 <div className="absolute inset-0 bg-linear-to-t from-stone-900 via-transparent to-transparent" />
 
                                 {selectedProduct.tag && (
-                                    <div className="absolute top-4 left-4 bg-[#6d122c]/95 border border-[#881938] text-rose-100 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
+                                    <div className="absolute top-4 left-4 bg-(--brand-base)/95 border border-(--brand-border) text-rose-100 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
                                         <Flame className="w-4 h-4 text-rose-200" />
                                         <span>{selectedProduct.tag}</span>
                                     </div>
@@ -227,8 +227,8 @@ export default function MenuSection() {
                                 </div>
 
                                 <div className="space-y-2">
-                                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-rose-200">
-                                        <Sparkles className="w-3.5 h-3.5 text-rose-300" />
+                                    <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-(--brand-accent)">
+                                        <Sparkles className="w-3.5 h-3.5 text-(--brand-accent)" />
                                         <span>Receta & Preparación</span>
                                     </div>
                                     <p className="text-stone-300 text-sm leading-relaxed">

@@ -77,7 +77,7 @@ export default function Navbar() {
                         >
                             <span
                                 style={{ fontFamily: 'var(--font-script)' }}
-                                className="text-4xl sm:text-5xl md:text-6xl text-stone-100 group-hover:text-[#6d122c] transition-colors leading-none tracking-wide -rotate-2 drop-shadow-md"
+                                className="text-4xl sm:text-5xl md:text-6xl text-stone-100 group-hover:text-(--brand-accent) transition-colors leading-none tracking-wide -rotate-2 drop-shadow-md"
                             >
                                 Ruta Uno
                             </span>
@@ -107,7 +107,7 @@ export default function Navbar() {
                                         {isHovered && (
                                             <motion.div
                                                 layoutId="navHover"
-                                                className="absolute inset-0 bg-stone-800/90 rounded-full border border-[#881938]/60 shadow-sm"
+                                                className="absolute inset-0 bg-stone-800/90 rounded-full border border-(--brand-border)/60 shadow-sm"
                                                 transition={{ type: 'spring', bounce: 0.25, duration: 0.3 }}
                                             />
                                         )}
@@ -127,7 +127,7 @@ export default function Navbar() {
 
                         {/* Ubicación Desktop */}
                         <div className="hidden md:flex items-center gap-2 text-xs text-stone-300 bg-stone-900/80 px-4 py-2 rounded-full border border-stone-800">
-                            <Sparkles className="w-3.5 h-3.5 text-[#b82d4f] animate-spin" style={{ animationDuration: '8s' }} />
+                            <Sparkles className="w-3.5 h-3.5 text-(--brand-accent) animate-spin" style={{ animationDuration: '8s' }} />
                             <span>Jardines de Agua Caliente, Tijuana</span>
                         </div>
 
@@ -153,7 +153,7 @@ export default function Navbar() {
                                 {isActive && (
                                     <motion.div
                                         layoutId="mobileActiveTab"
-                                        className="absolute inset-0 bg-linear-to-r from-[#540e21]/40 to-[#6d122c]/40 rounded-xl border border-[#881938]/60"
+                                        className="absolute inset-0 bg-linear-to-r from-(--brand-dark)/40 to-(--brand-base)/40 rounded-xl border border-(--brand-border)/60"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
                                     />
                                 )}

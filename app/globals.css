@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+:root {
+  --brand-dark: #540e21;
+  --brand-base: #821535;
+  --brand-border: #9e1c43;
+  --brand-accent: #c83259;
+  --brand-light: #f4718f;
+}
+
 html {
   scroll-behavior: smooth;
 }

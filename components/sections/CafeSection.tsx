@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Coffee, Flame, Sparkles, Droplets, Clock } from 'lucide-react';
+import { Coffee, Sparkles } from 'lucide-react';
 
 const coffeeHighlights = [
     {
@@ -39,14 +39,14 @@ export default function CafeSection() {
         <section id="cafe" className="py-16 md:py-24 bg-stone-950 relative overflow-hidden">
 
             {/* Resplandor ambiental guinda */}
-            <div className="absolute top-1/3 left-10 w-96 h-96 bg-[#6d122c]/15 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute top-1/3 left-10 w-96 h-96 bg-(--brand-base)/15 rounded-full blur-[140px] pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Cabecera */}
                 <div className="flex flex-col items-center text-center mb-12 space-y-3">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#6d122c]/20 border border-[#881938]/50 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
-                        <Coffee className="w-3.5 h-3.5 text-rose-300" />
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-(--brand-base)/20 border border-(--brand-border)/50 text-rose-200 text-xs font-semibold uppercase tracking-widest shadow-sm">
+                        <Coffee className="w-3.5 h-3.5 text-(--brand-accent)" />
                         <span>Barra de Café de Especialidad</span>
                     </div>
 
@@ -74,8 +74,8 @@ export default function CafeSection() {
                                 <button
                                     key={coffee.id}
                                     onClick={() => setSelectedCoffee(coffee)}
-                                    className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group ${isSelected
-                                            ? 'bg-[#6d122c]/25 border-[#881938] shadow-lg shadow-[#6d122c]/20'
+                                    className={`w-full text-left p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group cursor-pointer ${isSelected
+                                            ? 'bg-(--brand-base)/25 border-(--brand-border) shadow-lg shadow-(--brand-base)/20'
                                             : 'bg-stone-950/60 border-stone-800/80 hover:border-stone-700'
                                         }`}
                                 >
@@ -86,7 +86,7 @@ export default function CafeSection() {
                                                 {coffee.name}
                                             </span>
                                             {isSelected && (
-                                                <span className="w-2 h-2 rounded-full bg-[#b82d4f] animate-pulse" />
+                                                <span className="w-2 h-2 rounded-full bg-(--brand-accent) animate-pulse" />
                                             )}
                                         </div>
                                         <p className="text-xs sm:text-sm text-stone-400 leading-relaxed line-clamp-1 sm:line-clamp-2">
@@ -128,7 +128,7 @@ export default function CafeSection() {
                                     {/* Ficha de Detalles Inferior */}
                                     <div className="absolute bottom-0 inset-x-0 p-6 space-y-2">
                                         <div className="flex items-center gap-2 text-rose-200 text-xs font-bold uppercase tracking-wider">
-                                            <Sparkles className="w-4 h-4 text-rose-300" />
+                                            <Sparkles className="w-4 h-4 text-(--brand-accent)" />
                                             <span>{selectedCoffee.method}</span>
                                         </div>
                                         <h3 className="text-xl sm:text-2xl font-black text-stone-100">
