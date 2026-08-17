@@ -22,7 +22,6 @@ export default function Navbar() {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [activeTab, setActiveTab] = useState('Inicio');
 
-    // Detección automática de sección activa al hacer scroll (Scroll Spy)
     useEffect(() => {
         const observerCallback: IntersectionObserverCallback = (entries) => {
             entries.forEach((entry) => {
@@ -37,7 +36,7 @@ export default function Navbar() {
 
         const observerOptions = {
             root: null,
-            rootMargin: '-20% 0px -60% 0px', // Detecta la sección activa en el centro-superior del viewport
+            rootMargin: '-20% 0px -60% 0px',
             threshold: 0,
         };
 
@@ -51,7 +50,6 @@ export default function Navbar() {
         return () => observer.disconnect();
     }, []);
 
-    // Navegación suave garantizada al hacer clic
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, name: string) => {
         e.preventDefault();
         setActiveTab(name);
@@ -69,7 +67,7 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-center md:justify-between h-20 sm:h-24">
 
-                        {/* Logotipo Tipográfico */}
+                        {/* Logotipo Tipográfico: Guinda permanente en móvil, Blanco a Guinda con Hover en PC */}
                         <Link
                             href="#hero"
                             onClick={(e) => handleNavClick(e, '#hero', 'Inicio')}
@@ -77,13 +75,13 @@ export default function Navbar() {
                         >
                             <span
                                 style={{ fontFamily: 'var(--font-script)' }}
-                                className="text-4xl sm:text-5xl md:text-6xl text-stone-100 group-hover:text-(--brand-accent) transition-colors leading-none tracking-wide -rotate-2 drop-shadow-md"
+                                className="text-4xl sm:text-5xl md:text-6xl text-(--brand-accent) md:text-stone-100 md:group-hover:text-(--brand-accent) transition-colors leading-none tracking-wide -rotate-2 drop-shadow-[0_2px_12px_rgba(200,50,89,0.3)] md:drop-shadow-md"
                             >
                                 Ruta Uno
                             </span>
                             <span
                                 style={{ fontFamily: 'var(--font-condensed)' }}
-                                className="text-xs sm:text-sm tracking-[0.35em] text-stone-400 uppercase font-bold group-hover:text-stone-200 transition-colors -mt-1 md:-mt-2"
+                                className="text-xs sm:text-sm tracking-[0.35em] text-stone-300 md:text-stone-400 uppercase font-bold md:group-hover:text-stone-200 transition-colors -mt-1 md:-mt-2"
                             >
                                 CAFÉ & PIZZA
                             </span>
@@ -113,10 +111,10 @@ export default function Navbar() {
                                         )}
 
                                         <span className={`relative z-10 transition-colors ${isActive
-                                            ? 'text-rose-100 font-semibold'
-                                            : isHovered
-                                                ? 'text-stone-100'
-                                                : 'text-stone-400'
+                                                ? 'text-rose-100 font-semibold'
+                                                : isHovered
+                                                    ? 'text-stone-100'
+                                                    : 'text-stone-400'
                                             }`}>
                                             {link.name}
                                         </span>
@@ -147,7 +145,7 @@ export default function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                className={`relative flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-all duration-200 ${isActive ? 'text-rose-100 font-bold' : 'text-stone-400 hover:text-stone-200'
+                                className={`relative flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-all duration-200 ${isActive ? 'text-rose-100 font-bold' : 'text-stone-400 active:text-stone-200'
                                     }`}
                             >
                                 {isActive && (
